@@ -1,0 +1,233 @@
+/* Mary Bowers */
+
+/* --------------- ADD CSS RESET TO THE FILE HERE --------------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ----- AUTOPREFIXER FOR VS CODE WAS USED FOR VENDOR PREFIXES ----- */
+/* ---------- VARIABLES ---------- */
+:root {
+    --red: #760029;
+    --pink: #9a0093;
+    --orange: #ff8f6c;
+    --yellow: #FCD30D;
+    --green: #0BD996;
+    --lime-green: #AED90B;
+    --blue-gray: #90b8f7;
+    --blue: #1EB8FC;
+    --black: #000;
+    --white: #fff;
+    --light-gray: #eaeaea;
+    --dark-gray: #222;
+}
+
+/* ---------- GLOBAL STYLES ---------- */
+* {
+    box-sizing: border-box;
+    line-height: 1.35;
+}
+
+/* ----- CHECK FOR USER DARK MODE PREFERENCE ----- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-gray);
+        color: var(--light-gray);
+    }
+}
+
+/* ----- HEADINGS ----- */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.5em 0;
+    display: inline;
+}
+
+h2 {
+    font-size: 1.75em;
+    display: inline;
+}
+
+/* ----- IMAGES ----- */
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0.5em 0;
+}
+
+/* ----- ANIMATED ICON ----- */
+.icon {
+    font-family: "Anicons Regular";
+    font-size: 2em;
+    display: inline-block;
+    margin: 0 0.5em;
+    -webkit-animation: icon-animation 1s ease-in-out infinite;
+            animation: icon-animation 1s ease-in-out infinite;
+}
+
+footer .icon {
+    font-size: 1em;
+}
+
+@-webkit-keyframes icon-animation {
+    0% { font-variation-settings: "TIME" 1; }
+    100% { font-variation-settings: "TIME" 100; }
+}
+
+@keyframes icon-animation {
+    0% { font-variation-settings: "TIME" 1; }
+    100% { font-variation-settings: "TIME" 100; }
+}
+
+/* ----- HANDLE PREFERS REDUCED MOTION ----- */
+@media (prefers-reduced-motion: reduce) {
+    @-webkit-keyframes icon-animation {
+        0% { font-variation-settings: "TIME" 1; }
+    }
+    @keyframes icon-animation {
+        0% { font-variation-settings: "TIME" 1; }
+    }
+}
+
+/* ----- TEXT ----- */
+p,
+small {
+    font-size: 1em;
+    margin: 0.25em;
+    padding: 0.25em;
+    max-width: 75ch;
+}
+
+/* ----- MAIN/HEADER/FOOTER ----- */
+main,
+header,
+footer {
+    font-family: sans-serif;
+    color: var(--dark-gray);
+    width: 100%;
+}
+
+header,
+footer {
+    padding: 1em;
+}
+
+/* ----- CONTAINERS ----- */
+section {
+    margin: 1em 0;
+    padding: 1em;
+}
+
+/* ---------- EXTRA SMALL SCREEN STYLES ---------- */
+header,
+footer {
+    background-color: var(--pink);
+    color: var(--white);
+}
+
+section {
+    background-color: var(--red);
+    color: var(--light-gray);
+}
+
+img {
+    margin: 0.75em 0.75em 0.75em 0;
+    display: inline;
+    float: left;
+}
+
+/* ---------- SMALL SCREEN STYLES ---------- */
+@media (min-width: 620px) {
+    header,
+    footer {
+        background-color: var(--lime-green);
+        color: var(--dark-gray);
+    }
+
+    main {
+        display: grid;
+        grid-gap: 0.75em;
+        grid-template-columns: 1fr 1fr;
+        margin: 1em 0;
+    }
+
+    section {
+        background-color: var(--yellow);
+        color: var(--dark-gray);
+    }
+
+    img {
+        width: 200px;
+        max-width: 200px;
+    }
+}
+
+/* ---------- MEDIUM SCREEN STYLES ---------- */
+@media (min-width: 960px) {
+    header,
+    footer {
+        background-color: var(--black);
+        color: var(--white);
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    section {
+        background-color: var(--light-gray);
+    }
+}
+
+/* ---------- LARGE SCREEN STYLES ---------- */
+@media (min-width: 1380px) {
+    header,
+    footer {
+        background-color: var(--lime-green);
+        color: var(--dark-gray);
+    }
+
+    section {
+        background-color: var(--blue);
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* ---------- EXTRA LARGE SCREEN STYLES ---------- */
+@media (min-width: 1800px) {
+    header,
+    footer {
+        background-color: var(--orange);
+        padding-left: 5%;
+    }
+
+    main {
+        grid-template-columns: repeat(12, 1fr);
+        margin: 1em auto;
+    }
+
+    section {
+        background-color: var(--blue-gray);
+        color: var(--dark-gray);
+    }
+}
+
+/* ---------- ADJUSTING RESPONSIVE IMAGE SIZE ---------- */
+img {
+    width: 300px;
+    max-width: 300px;
+}
